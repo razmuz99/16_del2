@@ -21,7 +21,7 @@ public class Playerlist {
     public Player getNextPlayer(){
         return playerList.getFirst();
     }
-/*
+
     public void changePlayerTurn(){
         Player currentPlayer = getNextPlayer();
         boolean playerHasBonusturn = currentPlayer.hasBonusTurn();
@@ -33,6 +33,6 @@ public class Playerlist {
         // this line below takes the first player in the queue and puts him in the back of the queue.
         playerList.addLast(playerList.pollFirst());
     }
-*/
+
 
 }
