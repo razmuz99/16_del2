@@ -24,9 +24,9 @@ public class Playerlist {
 
     public void changePlayerTurn(){
         Player currentPlayer = getNextPlayer();
-        boolean playerHasBonusturn = currentPlayer.hasBonusTurn();
+        boolean playerHasBonusTurn = currentPlayer.hasBonusTurn();
 
-        if(playerHasBonusturn){
+        if(playerHasBonusTurn){
             currentPlayer.setBonusTurn(false);
             return;
         }
