@@ -5,8 +5,9 @@ import java.lang.Math;
 public class Die {
 
     private int value = 0;
+    private int dieFaces = 6;
 
-    public Die(){
+    Die(){
     }
 
     public int getValue() {
@@ -20,6 +21,8 @@ public class Die {
     public void rollDie(){
         this.setValue((int)(Math.random()*6+1)); // (int)(0.99 to 5.99)+1
     }
+
+    public void setDiefaces(int faceAmount){dieFaces=faceAmount;}
 
 }
 
