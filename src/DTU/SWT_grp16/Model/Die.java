@@ -4,25 +4,19 @@ import java.lang.Math;
 
 public class Die {
 
-    private int value = 0;
-    private int dieFaces = 6;
+    private int value;
 
     Die(){
+        random();
     }
 
-    public int getValue() {
-        return value;
+    int getValue(){
+        return this.value;
     }
 
-    private void setValue(int value){
-        this.value = value;
+    void random(){
+        this.value = (int)(Math.random()*6+1);
     }
-
-    public void rollDie(){
-        this.setValue((int)(Math.random()*6+1)); // (int)(0.99 to 5.99)+1
-    }
-
-    public void setDiefaces(int faceAmount){dieFaces=faceAmount;}
 
 }
 

@@ -2,32 +2,24 @@ package DTU.SWT_grp16.Model;
 
 public class DiceCup {
 
-    private Die[] diceArray;
+    private Die die1;
+    private Die die2;
 
     public DiceCup(){
-        diceArray = new Die[2];
-        diceArray[0] = new Die();
-        diceArray[1] = new Die();
-    }
-
-    public Die[] getDiceArray(){
-        return diceArray;
+        this.die1 = new Die();
+        this.die2 = new Die();
     }
 
     public void roll(){
-        for (Die die : diceArray) {
-            die.rollDie();
-        }
+        die1.random();
+        die2.random();
     }
 
     public int getSum(){
         int sum = 0;
-        for (Die die : diceArray) {
-            sum += die.getValue();
-        }
+        sum += die1.getValue();
+        sum += die2.getValue();
         return sum;
     }
-
-
-
+    
 }
