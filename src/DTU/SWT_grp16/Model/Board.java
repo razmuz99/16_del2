@@ -1,0 +1,49 @@
+package DTU.SWT_grp16.Model;
+
+import DTU.SWT_grp16.UI.Input;
+import java.util.List;
+import DTU.SWT_grp16.Model.Field;
+
+import static java.lang.String.valueOf;
+
+public class Board {
+
+    Input wr = new Input();
+    public Board(){
+
+    }
+    public String[][] setUpFields(){
+
+        List<String> test= wr.mReader("Fields.txt");
+        String[] fields = test.toArray(new String[0]);
+        String[] endFields = new String[fields.length+2];
+
+        for (int i = 0; i < (endFields.length) ; i++) {
+            if(i<2){
+                endFields[i] = "nathing:0";
+            }
+            else{
+                endFields[i] = fields[i-2];
+            }
+        }
+        String[][] finalFields = new String[fields.length+2][3];
+
+        for (int i = 0; i < finalFields.length; i++) {
+            finalFields[i] = endFields[i].split(":");
+            for (int j = 0; j <finalFields[i].length ; j++) {
+                finalFields[i][j] = endFields[i].split(":")[0];
+
+            }
+            finalFields[i] = endFields[i].split(":");
+
+        }
+        for (int i = 2; i < 3; i++) {
+            int points = Integer.valueOf(finalFields[i][1]);
+            boolean BTurn = Boolean.valueOf(finalFields[i][3]);
+            Field finalFields = new Field(1,false);
+
+        }
+        return finalFields;
+    }
+
+}
