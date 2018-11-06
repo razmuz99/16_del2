@@ -25,10 +25,12 @@ public class Playerlist {
     public void changePlayerTurn(){
         Player currentPlayer = getNextPlayer();
         boolean playerHasBonusturn = currentPlayer.hasBonusTurn();
+
         if(playerHasBonusturn){
             currentPlayer.setBonusTurn(false);
             return;
         }
+
         // need to add descriptive names, sorry.
         // this line below takes the first player in the queue and puts him in the back of the queue.
         playerList.addLast(playerList.pollFirst());

@@ -6,15 +6,15 @@ public class Die {
 
     private int value;
 
-    Die(){
+    public Die(){
         random();
     }
 
-    int getValue(){
+    public int getValue(){
         return this.value;
     }
 
-    void random(){
+    public void random(){
         this.value = (int)(Math.random()*6+1);
     }
 
