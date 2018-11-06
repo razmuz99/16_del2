@@ -37,12 +37,6 @@ public class Board {
             finalFields[i] = endFields[i].split(":");
 
         }
-        for (int i = 2; i < 3; i++) {
-            int points = Integer.valueOf(finalFields[i][1]);
-            boolean BTurn = Boolean.valueOf(finalFields[i][3]);
-            Field finalFields = new Field(1,false);
-
-        }
         return finalFields;
     }
 
