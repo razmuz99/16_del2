@@ -14,7 +14,7 @@ public class DiceCup {
         return diceArray;
     }
 
-    public void rollAllDice(){
+    public void roll(){
         for (Die die : diceArray) {
             die.rollDie();
         }
