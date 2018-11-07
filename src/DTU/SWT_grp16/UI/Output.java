@@ -7,7 +7,7 @@ public class Output {
     public Output(){
     }
 
-    public void fieldMessage(int fieldID){
+    public void printFieldMessage(int fieldID){
         String fieldMessage = StringCollection.getFieldMessageByID(fieldID);
         System.out.println(fieldMessage);
     }
