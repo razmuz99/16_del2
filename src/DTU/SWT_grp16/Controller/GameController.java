@@ -1,6 +1,10 @@
 package DTU.SWT_grp16.Controller;
 
 import DTU.SWT_grp16.Model.*;
+import DTU.SWT_grp16.Model.Board;
+import DTU.SWT_grp16.Model.DiceCup;
+import DTU.SWT_grp16.Model.Player;
+import DTU.SWT_grp16.View.Keyboard;
 
 public class GameController{
 
@@ -9,15 +13,18 @@ public class GameController{
     private static Player player2;
     private static Playerlist playerlist;
     private static DiceCup diceCup;
-    private static BoardSimple board;
+    private static Board board;
+    private static Keyboard keyboard = new Keyboard();
 
     public static void setupGame(){
+        //player1 = new Player(keyboard.askPlayerName(1));
+        //player2 = new Player(keyboard.askPlayerName(2));
         player1 = new Player("Alice");
         player2 = new Player("Bob");
         playerlist = new Playerlist(player1, player2);
 
         diceCup = new DiceCup();
-        board = new BoardSimple();
+        board = new Board();
     }
 
     public static void playGame(){
