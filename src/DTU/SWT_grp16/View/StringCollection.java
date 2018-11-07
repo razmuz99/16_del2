@@ -1,4 +1,4 @@
-package DTU.SWT_grp16.UI;
+package DTU.SWT_grp16.View;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

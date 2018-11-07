@@ -56,7 +56,7 @@ public class GameController{
     }
 
     private static Field getFieldByID(int ID){
-        Field field = new Field(0,0);
+        Field field = new Field();
         for(Field f : board.getFields()){
             if(ID == field.getID())
                 field = f;

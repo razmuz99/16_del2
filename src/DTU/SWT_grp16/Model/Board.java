@@ -9,13 +9,19 @@ public class Board {
         setupFields(input.readFileField());
     }
 
+
     private void setupFields(String[][] input){
         //Better implementation uses a file and gives Fields a name variable.
         fields = new Field[13];
         for (int i = 0; i <fields.length ; i++) {
-            fields[i] = new Field(input[i][0], Integer.valueOf(input[i][1]), Boolean.valueOf(input[i][2]));
+            int ID = i;
+            String name = input[i][0];
+            int points = Integer.valueOf(input[i][1]);
+            boolean bonusTurn = Boolean.valueOf(input[i][2]);
+            fields[i] = new Field(ID, points, name, bonusTurn);
         }
     }
+
 
     public Field[] getFields(){
         return this.fields;
