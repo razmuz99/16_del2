@@ -6,6 +6,8 @@ import DTU.SWT_grp16.Model.DiceCup;
 import DTU.SWT_grp16.Model.Player;
 import DTU.SWT_grp16.View.Input;
 
+import java.util.Scanner;
+
 public class GameController{
 
     private static int WIN_AMOUNT = 3000;
@@ -15,6 +17,7 @@ public class GameController{
     private static DiceCup diceCup;
     private static Board board;
     private static Input input = new Input();
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void setupGame(){
         //player1 = new Player(input.askPlayerName(1));
@@ -34,7 +37,8 @@ public class GameController{
         String currentName = currentPlayer.getName();
 
         ViewController.printNextTurnMessage(currentName);
-        //ViewController.waitForEnter();
+        ViewController.waitForEnter();
+
 
         diceCup.roll();
         int sum = diceCup.getSum();
@@ -61,6 +65,7 @@ public class GameController{
             playerlist.changePlayerTurn();
             playGame();
         }
+        ViewController.closeScanner();
     }
 
     private static Field getFieldByID(int ID){

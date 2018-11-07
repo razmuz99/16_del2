@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner input;
-    public Input(){ }
+
+    private static Scanner scanner = new Scanner(System.in);
 
     public void mWriter(String input, String filePath)  {
         BufferedWriter writer;
@@ -70,25 +70,24 @@ public class Input {
     public String askPlayerName(int playerNumber){
         String playerName = "";
         System.out.println("player"+playerNumber+" : input name");
-        input = new Scanner(System.in);
         while(waitForInput()){
-            playerName = input.nextLine();
+            playerName = scanner.nextLine();
             break;
         }
-        input.close();
         return playerName;
     }
 
     public static boolean waitForInput(){
-        boolean doNext = input.hasNext();
+        boolean doNext = scanner.hasNext();
         return doNext;
     }
 
     public static void waitForEnter(){
-        String word = "Tommmmmyyy";
-        Scanner test = new Scanner(System.in);
-        word = test.nextLine();
-        test.close();
+        scanner.nextLine();
+    }
+
+    public static void closeScanner(){
+        scanner.close();
     }
 
 }

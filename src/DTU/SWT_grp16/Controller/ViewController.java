@@ -17,6 +17,9 @@ public class ViewController {
         Output.printTurnResult(diceSum, id, currentBalance, bonusTurn, isWinner);
     }
 
+    public static void closeScanner(){
+        Input.closeScanner();
+    }
 
 
 }
