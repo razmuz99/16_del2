@@ -3,8 +3,14 @@ package DTU.SWT_grp16.View;
 import java.util.List;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Input {
+    Scanner input;
+    public Input(){
+        input = new Scanner(System.in);
+    }
+
     public void mWriter(String input, String filePath)  {
 
         BufferedWriter writer;
@@ -54,7 +60,6 @@ public class Input {
         String[][] finalFields = new String[fields.length+2][3];
 
         for (int i = 0; i < finalFields.length; i++) {
-            //finalFields[i] = endFields[i].split(":");
             for (int j = 0; j <finalFields[i].length ; j++) {
                 finalFields[i][j] = endFields[i].split(":")[0];
             }
@@ -64,4 +69,23 @@ public class Input {
         return finalFields;
     }
 
+    public String askPlayerName(int playerNumber){
+        String playerName = "";
+        System.out.println("player"+playerNumber+" : input name");
+        while(waitForInput()){
+            playerName = input.nextLine();
+            break;
+        }
+        input.close();
+        return playerName;
+    }
+    public boolean waitForInput(){
+        boolean doNext = input.hasNext();
+        return doNext;
+    }
+
+    public String printNextTurnMessage(String name){
+
+        return name;
+    }
 }

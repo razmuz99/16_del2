@@ -9,7 +9,6 @@ public class Board {
         setupFields(input.readFileField());
     }
 
-
     private void setupFields(String[][] input){
         //Better implementation uses a file and gives Fields a name variable.
         fields = new Field[13];
@@ -21,7 +20,6 @@ public class Board {
             fields[i] = new Field(ID, points, name, bonusTurn);
         }
     }
-
 
     public Field[] getFields(){
         return this.fields;
