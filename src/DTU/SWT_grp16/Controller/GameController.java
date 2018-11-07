@@ -1,8 +1,6 @@
 package DTU.SWT_grp16.Controller;
 
 import DTU.SWT_grp16.Model.*;
-import DTU.SWT_grp16.UI.Input;
-import DTU.SWT_grp16.UI.Output;
 
 public class GameController{
 

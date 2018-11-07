@@ -1,6 +1,4 @@
-package DTU.SWT_grp16.UI;
-
-import DTU.SWT_grp16.Controller.GameController;
+package DTU.SWT_grp16.View;
 
 import java.util.Scanner;
 

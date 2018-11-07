@@ -1,8 +1,7 @@
 package DTU.SWT_grp16.Model;
 
-import DTU.SWT_grp16.UI.Input;
+import DTU.SWT_grp16.View.Input;
 import java.util.List;
-import DTU.SWT_grp16.Model.Field;
 
 import static java.lang.String.valueOf;
 
