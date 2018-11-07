@@ -1,5 +1,5 @@
 package DTU.SWT_grp16.Model;
-import DTU.SWT_grp16.UI.Input;
+import DTU.SWT_grp16.View.Input;
 
 public class Board {
     Input input = new Input();
