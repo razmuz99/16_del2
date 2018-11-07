@@ -1,4 +1,4 @@
-*.xml
+*.idea
 *.html
 /.idea
 *.iml
