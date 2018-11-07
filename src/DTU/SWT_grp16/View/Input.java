@@ -85,9 +85,9 @@ public class Input {
     }
 
     public static void waitForEnter(){
-        input = new Scanner(System.in);
-        input.nextLine();
-        input.close();
+        Scanner test = new Scanner(System.in);
+        String s = test.nextLine();
+        test.close();
     }
 
 }
