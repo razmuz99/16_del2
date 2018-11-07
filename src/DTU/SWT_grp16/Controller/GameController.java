@@ -28,7 +28,9 @@ public class GameController{
     public static void playGame(){
 
         Player currentPlayer = playerlist.getNextPlayer();
-        //ViewController.nextTurnMessage(currentPlayer);
+        String currentName = currentPlayer.getName();
+
+        //ViewController.printNextTurnMessage(currentName);
         //ViewController.waitForEnter();
 
         diceCup.roll();
@@ -45,7 +47,11 @@ public class GameController{
             currentPlayer.setWinner(true);
         }
 
-        //ViewController.turnResultMessage(currentPlayer);
+        int id = currentField.getID();
+        int balance = currentPlayer.getBalance();
+        boolean bonusTurn = currentPlayer.hasBonusTurn();
+        boolean isWinner = currentPlayer.isWinner();
+        //ViewController.printTurnResult(sum, balance, bonusTurn, isWinner);
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){
