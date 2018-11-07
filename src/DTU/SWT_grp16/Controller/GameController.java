@@ -4,7 +4,7 @@ import DTU.SWT_grp16.Model.*;
 import DTU.SWT_grp16.Model.Board;
 import DTU.SWT_grp16.Model.DiceCup;
 import DTU.SWT_grp16.Model.Player;
-import DTU.SWT_grp16.View.Keyboard;
+import DTU.SWT_grp16.View.Input;
 
 public class GameController{
 
@@ -14,13 +14,11 @@ public class GameController{
     private static Playerlist playerlist;
     private static DiceCup diceCup;
     private static Board board;
-    private static Keyboard keyboard = new Keyboard();
+    private static Input input = new Input();
 
     public static void setupGame(){
-        //player1 = new Player(keyboard.askPlayerName(1));
-        //player2 = new Player(keyboard.askPlayerName(2));
-        player1 = new Player("Alice");
-        player2 = new Player("Bob");
+        player1 = new Player(input.askPlayerName(1));
+        player2 = new Player(input.askPlayerName(2));
         playerlist = new Playerlist(player1, player2);
 
         diceCup = new DiceCup();

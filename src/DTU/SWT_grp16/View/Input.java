@@ -7,12 +7,9 @@ import java.util.Scanner;
 
 public class Input {
     Scanner input;
-    public Input(){
-        input = new Scanner(System.in);
-    }
+    public Input(){ }
 
     public void mWriter(String input, String filePath)  {
-
         BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter(filePath));
@@ -22,8 +19,8 @@ public class Input {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
     public List<String> mReader(String filePath)  {
         BufferedReader reader;
         String currentLine="";
@@ -43,6 +40,7 @@ public class Input {
 
         return list;
     }
+
     public String[][] readFileField(){
 
         List<String> test= mReader("src/Fields.txt");
@@ -72,6 +70,7 @@ public class Input {
     public String askPlayerName(int playerNumber){
         String playerName = "";
         System.out.println("player"+playerNumber+" : input name");
+        input = new Scanner(System.in);
         while(waitForInput()){
             playerName = input.nextLine();
             break;
@@ -79,13 +78,16 @@ public class Input {
         input.close();
         return playerName;
     }
+
     public boolean waitForInput(){
         boolean doNext = input.hasNext();
         return doNext;
     }
 
-    public String printNextTurnMessage(String name){
-
-        return name;
+    public void waitForEnter(){
+        input = new Scanner(System.in);
+        input.nextLine();
+        input.close();
     }
+
 }
