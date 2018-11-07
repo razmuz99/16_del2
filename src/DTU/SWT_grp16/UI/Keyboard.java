@@ -14,7 +14,7 @@ public class Keyboard {
 
     public String askPlayerName(int playerNumber){
         String playerName = "";
-
+        System.out.println("player"+playerNumber+" : input name");
         while(waitForInput()){
             playerName = input.nextLine();
             break;

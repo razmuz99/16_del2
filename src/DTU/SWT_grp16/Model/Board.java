@@ -1,43 +1,23 @@
 package DTU.SWT_grp16.Model;
-
 import DTU.SWT_grp16.UI.Input;
-import java.util.List;
-import DTU.SWT_grp16.Model.Field;
-
-import static java.lang.String.valueOf;
 
 public class Board {
+    Input input = new Input();
+    private Field[] fields;
 
-    Input wr = new Input();
     public Board(){
-
-    }
-    public String[][] setUpFields(){
-
-        List<String> test= wr.mReader("Fields.txt");
-        String[] fields = test.toArray(new String[0]);
-        String[] endFields = new String[fields.length+2];
-
-        for (int i = 0; i < (endFields.length) ; i++) {
-            if(i<2){
-                endFields[i] = "nathing:0";
-            }
-            else{
-                endFields[i] = fields[i-2];
-            }
-        }
-        String[][] finalFields = new String[fields.length+2][3];
-
-        for (int i = 0; i < finalFields.length; i++) {
-            finalFields[i] = endFields[i].split(":");
-            for (int j = 0; j <finalFields[i].length ; j++) {
-                finalFields[i][j] = endFields[i].split(":")[0];
-
-            }
-            finalFields[i] = endFields[i].split(":");
-
-        }
-        return finalFields;
+        setupFields(input.readFileField());
     }
 
+    private void setupFields(String[][] input){
+        //Better implementation uses a file and gives Fields a name variable.
+        fields = new Field[13];
+        for (int i = 0; i <fields.length ; i++) {
+            fields[i] = new Field(input[i][0], Integer.valueOf(input[i][1]), Boolean.valueOf(input[i][2]));
+        }
+    }
+
+    public Field[] getFields(){
+        return this.fields;
+    }
 }
