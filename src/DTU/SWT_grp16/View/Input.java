@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
-    Scanner input;
+    private static Scanner input;
     public Input(){ }
 
     public void mWriter(String input, String filePath)  {
@@ -79,15 +79,16 @@ public class Input {
         return playerName;
     }
 
-    public boolean waitForInput(){
+    public static boolean waitForInput(){
         boolean doNext = input.hasNext();
         return doNext;
     }
 
-    public void waitForEnter(){
-        input = new Scanner(System.in);
-        input.nextLine();
-        input.close();
+    public static void waitForEnter(){
+        String word = "Tommmmmyyy";
+        Scanner test = new Scanner(System.in);
+        word = test.nextLine();
+        test.close();
     }
 
 }

@@ -17,8 +17,11 @@ public class GameController{
     private static Input input = new Input();
 
     public static void setupGame(){
-        player1 = new Player(input.askPlayerName(1));
-        player2 = new Player(input.askPlayerName(2));
+        //player1 = new Player(input.askPlayerName(1));
+        //player2 = new Player(input.askPlayerName(2));
+        player1 = new Player("Tommy");
+        player2 = new Player("Timme");
+
         playerlist = new Playerlist(player1, player2);
 
         diceCup = new DiceCup();
@@ -28,7 +31,9 @@ public class GameController{
     public static void playGame(){
 
         Player currentPlayer = playerlist.getNextPlayer();
-        //ViewController.nextTurnMessage(currentPlayer);
+        String currentName = currentPlayer.getName();
+
+        ViewController.printNextTurnMessage(currentName);
         //ViewController.waitForEnter();
 
         diceCup.roll();
@@ -45,10 +50,15 @@ public class GameController{
             currentPlayer.setWinner(true);
         }
 
-        //ViewController.turnResultMessage(currentPlayer);
+        int id = currentField.getID();
+        int balance = currentPlayer.getBalance();
+        boolean bonusTurn = currentPlayer.hasBonusTurn();
+        boolean isWinner = currentPlayer.isWinner();
+        ViewController.printTurnResult(sum, id, balance, bonusTurn, isWinner);
 
         boolean gameIsNotOver = !currentPlayer.isWinner();
         if(gameIsNotOver){
+            playerlist.changePlayerTurn();
             playGame();
         }
     }
@@ -56,7 +66,7 @@ public class GameController{
     private static Field getFieldByID(int ID){
         Field field = new Field();
         for(Field f : board.getFields()){
-            if(ID == field.getID())
+            if(ID == f.getID())
                 field = f;
         }
         return field;
